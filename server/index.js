@@ -1,27 +1,30 @@
-require('dotenv').config();
-const express = require('express');
+require("dotenv").config();
+const express = require("express");
 const app = express();
-const session = require('express-session');
+const session = require("express-session");
+const cors = require("cors");
 
 app.use(
   session({
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 60000}
+    cookie: { maxAge: 60000 }
   })
 );
 
+app.use(cors("*"));
+
 const { PORT } = process.env;
 
-app.get('/', (req, res, next) => {
-    res.send('<h1>It works!</h1>')
+app.get("/", (req, res, next) => {
+  if (req.session.user) {
+    res.status(200);
+  } else {
+    res.status(401).send("Not Allowed");
+  }
 });
 
-
-
-
-
-app.listen(PORT || 4000, () => {
-    console.log(`Listening for request on ${PORT}`)
+app.listen(PORT, () => {
+  console.log(`Listening for request on ${PORT}`);
 });
