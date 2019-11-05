@@ -6,7 +6,7 @@ export default function UsernameInput(props) {
     <div class="form-group">
       <label for="exampleInputEmail1">Username</label>
       <input
-        class="form-control"
+        className={`form-control ${props.error && "is-invalid"}`}
         id="username"
         aria-describedby="emailHelp"
         type="text"
@@ -14,6 +14,7 @@ export default function UsernameInput(props) {
         value={props.value}
         onChange={props.onInput}
       />
+      {props.error && <div class="invalid-feedback ml-1">{props.error}</div>}
     </div>
   );
 }

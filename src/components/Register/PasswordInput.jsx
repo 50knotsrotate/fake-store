@@ -6,7 +6,7 @@ export default function PasswordInput(props) {
     <div class="form-group">
       <label for="password">Password</label>
       <input
-        class={`form-control ${props.error && "is-invalid"}`}
+        className={`form-control ${props.error && "is-invalid"}`}
         id="password"
         aria-describedby="emailHelp"
         type="password"

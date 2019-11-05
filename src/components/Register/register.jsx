@@ -33,9 +33,26 @@ export default class register extends Component {
         }
       });
     } else {
-      post("/register", { username, password }).then(_res => {
-        this.props.history.push("/home");
+      this.setState({
+        errors: {
+          username: null,
+          password: null
+        }
       });
+      post("/register", { username, password })
+        .then(_res => {
+          this.props.history.push("/home");
+        })
+        .catch(err => {
+          var error = err.response.data;
+
+          this.setState({
+            errors: {
+              ...this.state.errors,
+              [error.type]: error.message
+            }
+          });
+        });
     }
   };
 
