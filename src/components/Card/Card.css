@@ -1,0 +1,31 @@
+.card-img {
+    width: 50px;
+    height: 50px;
+}
+
+.card-body-custom {
+    height: 300px;
+    /* margin-top: 50px; */
+}
+
+.collections {
+    margin-top: 100px;
+}
+
+.collection {
+   
+}
+/* / */
+
+@media only screen and (max-width: 992px){
+    .collections{
+        margin-top: 50px;
+    }
+}
+
+/* @media only screen and (min-width: 768px){
+    .collection {
+ position: relative;
+ bottom: 40px;
+    }
+} */

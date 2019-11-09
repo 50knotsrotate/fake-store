@@ -34,7 +34,7 @@ app.get("/", (req, res, next) => {
   if (req.session.user) {
     res.status(200);
   } else {
-    res.status(401).send("Not Allowed");
+    res.status(200).send("Not Allowed");
   }
 });
 

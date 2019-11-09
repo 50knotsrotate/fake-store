@@ -1,0 +1,85 @@
+.main-container {
+    height: calc(100vh - 57px); 
+
+    /* width of navbar */
+}
+
+.collection-container {
+    width: 100vw;
+}
+
+.flip-card {
+    height: 300px;
+    width: 300px;
+}
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+ .flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+} */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://static.pexels.com/photos/163688/hiker-travel-trip-wander-163688.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img {
+    max-width: 100%;
+}
+
+.collections-btn {
+    border-radius: 25px;
+    width: 150px;
+}
+
+@media only screen and (max-width:500px){
+    .welcome-text{
+        font-size: 95%;
+    }
+}
